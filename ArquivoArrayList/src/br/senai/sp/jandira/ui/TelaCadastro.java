@@ -14,6 +14,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class TelaCadastro extends JFrame {
@@ -28,6 +29,7 @@ public class TelaCadastro extends JFrame {
 	Contato objContato = null;
 	DadosContato objDadosContato = null;
 	Arquivo objArquivo = null;
+	String texto = "";
 
 	public TelaCadastro() {
 		
@@ -101,12 +103,33 @@ public class TelaCadastro extends JFrame {
 				objContato.setTelefone(txtTelefone.getText());
 				objContato.setCidade(txtCidade.getText());
 				
-				//Preparação dos dados para a gravação mo arquivo txt
-				String texto = objContato.getNome() + ";" + objContato.getEmail() + ";" + objContato.getTelefone() + ";" + objContato.getCidade() + "\n";
+				//Preparação dos dados para a gravação mo arquivo txt - antes da modificação do método ler
+				//String texto = objContato.getNome() + ";" + objContato.getEmail() + ";" + objContato.getTelefone() + ";" + objContato.getCidade() + "\n";
 				
 				//Gravação dos dados no arquivo txt
 				String caminho = "C:\\Users\\21276327\\Desktop\\Contato\\contatos.txt";
+				
+				
+				//Teste de leitura de arqivo txt
+				objDadosContato = objArquivo.ler(caminho);
+				
+				//Gravação
+				objDadosContato.cadastrarContato(objContato);
+				
+				//Leitura
+				ArrayList<Contato> contatos = objDadosContato.listarContatos();
+				
+				contatos.forEach(contato->{
+					//System.out.println("Nome: " + contato.getNome() + " E-mail: " + contato.getEmail() + " Telefone: " + contato.getTelefone() + " Cidade: " + contato.getCidade());
+					
+					texto += contato.getNome() + "; " + contato.getEmail() + "; " + contato.getTelefone() + "; " + contato.getCidade() + "\n";
+				});
+				
+				//System.out.println(texto);
 				objArquivo.escrever(caminho, texto);
+				
+				contatos.clear();
+				
 			}
 		});
 		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 12));

@@ -10,19 +10,19 @@ public class App {
 		DadosContato objDadosContato = new DadosContato();
 		Arquivo objArquivo = new Arquivo();
 		
-		String caminho = "C:\\Users\\21276327\\Desktop\\Contato\\contatos.txt";
+		//String caminho = "C:\\Users\\21276327\\Desktop\\Contato\\contatos.txt";
 		
-		//Objetos de contato para teste:
+		/*Objetos de contato para teste:
 		Contato contato1 = new Contato("Ana Silva", "ana.silva@gmail.com", "1111-2222", "Jandira");
 		Contato contato2 = new Contato("Maria Eduarda", "maria.eduarda@gmail.com", "3333-4444", "Barueri");
 		Contato contato3 = new Contato("João Santos", "joão.santos@gmail.com", "5555-6666", "Osasco");
 		Contato contato4 = new Contato("Carlos Alberto", "carlos.alberto@gmail.com", "7777-8888", "Itapevi");
 		
-		//Teste de cadastro de contatos
+		Teste de cadastro de contatos
 		objDadosContato.cadastrarContato(contato1);
 		objDadosContato.cadastrarContato(contato2);
 		objDadosContato.cadastrarContato(contato3);
-		objDadosContato.cadastrarContato(contato4);
+		objDadosContato.cadastrarContato(contato4);*/
 		
 		//Percorre o ArrayList de contatos e grava os dados no arquivo txt
 		
@@ -41,9 +41,9 @@ public class App {
 		
 		System.out.println(texto);
 		
-		objArquivo.escrever(caminho, texto);
+		//objArquivo.escrever(caminho, texto);
 		
-		System.out.println("Total de contatos cadastrados: " + objDadosContato.contarContatos());
+		//System.out.println("Total de contatos cadastrados: " + objDadosContato.contarContatos());
 		
 		TelaCadastro tela = new TelaCadastro();
 		tela.setVisible(true);
