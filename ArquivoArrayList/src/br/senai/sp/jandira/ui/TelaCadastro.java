@@ -33,7 +33,6 @@ public class TelaCadastro extends JFrame {
 
 	public TelaCadastro() {
 		
-		objContato = new Contato();
 		objDadosContato = new DadosContato();
 		objArquivo = new Arquivo();
 		
@@ -97,6 +96,8 @@ public class TelaCadastro extends JFrame {
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				objContato = new Contato();
+				
 				//Captura dos dados para o objeto de contato
 				objContato.setNome(txtNome.getText());
 				objContato.setEmail(txtEmail.getText());
@@ -125,11 +126,12 @@ public class TelaCadastro extends JFrame {
 					texto += contato.getNome() + "; " + contato.getEmail() + "; " + contato.getTelefone() + "; " + contato.getCidade() + "\n";
 				});
 				
-				//System.out.println(texto);
+				System.out.println(texto);
 				objArquivo.escrever(caminho, texto);
-				
 				contatos.clear();
-				
+				objContato = null;
+				objDadosContato = null;
+				texto = "";
 			}
 		});
 		btnCadastrar.setFont(new Font("Tahoma", Font.PLAIN, 12));

@@ -1,6 +1,5 @@
 package br.senai.sp.jandira;
 
-import br.senai.sp.jandira.model.Contato;
 import br.senai.sp.jandira.ui.TelaCadastro;
 
 public class App {
@@ -33,14 +32,14 @@ public class App {
 		}*/
 		
 		//Segundo exemplo
-		String texto = "";
-		for(Contato contato : objDadosContato.listarContatos()) {
-			//System.out.println(contato.getNome() + ";" + contato.getEmail() + ";" + contato.getTelefone() + ";" + contato.getCidade());
-			texto += contato.getNome() + ";" + contato.getEmail() + ";" + contato.getTelefone() + ";" + contato.getCidade() + "\n";
-		}
-		
-		System.out.println(texto);
-		
+//		String texto = "";
+//		for(Contato contato : objDadosContato.listarContatos()) {
+//			//System.out.println(contato.getNome() + ";" + contato.getEmail() + ";" + contato.getTelefone() + ";" + contato.getCidade());
+//			texto += contato.getNome() + ";" + contato.getEmail() + ";" + contato.getTelefone() + ";" + contato.getCidade() + "\n";
+//		}
+//		
+//		System.out.println(texto);
+//		
 		//objArquivo.escrever(caminho, texto);
 		
 		//System.out.println("Total de contatos cadastrados: " + objDadosContato.contarContatos());
